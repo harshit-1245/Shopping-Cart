@@ -1,4 +1,5 @@
 import React from 'react'
+import Cat from "../../../assets/category/download-1.jpeg"
 import {useNavigate} from  "react-router-dom";
 import "./Category.scss";
 
@@ -12,18 +13,10 @@ function Category({categories}) {
     <>
     <div className='shop-by-category'>
       <div className='categories'>
-        {/* here we are running loop  */}
-        {/* Why it is necessary to optional chaining just because it is undefined while response then it will stopped further respo0nsing */}
-        {categories && categories?.data && categories?.data?.map((item) => (
-          //whenver i click category sectopn i will redirect to another page like category section
-  <div key={item.id} className='category' onClick={()=>navigate(`/category/${item.id}`)}>
-    {/* Access the image URL from the nested structure */}
-     <img src={process.env.REACT_APP_STRIPE_APP_DEV_URL + item.attributes.img.data.attributes.url} alt="" />
-  </div>
-))} 
-
-
-
+       <div className="category">
+        <img src={Cat} alt="" />
+       </div>
+    
       </div>
     </div>
      </>
