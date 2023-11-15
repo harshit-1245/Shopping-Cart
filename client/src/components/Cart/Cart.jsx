@@ -19,11 +19,11 @@ const Cart = ({setShowCart}) => {
          {/* this will run condtionally */}
 
          {/* if it is false then appear */}
-    <div className="empty-cart">
+    {/* <div className="empty-cart">
       <BsCartX/>
       <span>No products in the cart</span>
       <button className='return-cta'>RETURN TO SHOP</button>
-     </div>
+     </div> */}
        
 
        {/* if it is true then it will appear */}

@@ -1,26 +1,24 @@
-import React from 'react'
-import Cat from "../../../assets/category/download-1.jpeg"
-import {useNavigate} from  "react-router-dom";
-import "./Category.scss";
+// Category.jsx
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import './Category.scss';
 
+function Category({ categories }) {
+  const navigate = useNavigate();
 
-function Category({categories}) {
-  const navigate=useNavigate();
-  
- 
-  //basically we run this through loop, using api calling
   return (
     <>
-    <div className='shop-by-category'>
-      <div className='categories'>
-       <div className="category">
-        <img src={Cat} alt="" />
-       </div>
-    
+      <div className='shop-by-category'>
+        <div className='categories'>
+          {categories?.map((item) => (
+            <div key={item.id} className="category" onClick={() => navigate(`/category/${item}`)}>
+              <p className="category-name">{item}</p>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
-     </>
-  )
+    </>
+  );
 }
 
 export default Category;

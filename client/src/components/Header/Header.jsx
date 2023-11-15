@@ -45,11 +45,11 @@ const Header = () => {
           onMouseLeave={handleDropDownToggle}
           >
             Categories
-            <div className={`dropdown-content ${isDropped ? 'visible':''} `}>
+            {/* <div className={`dropdown-content ${isDropped ? 'visible':''} `}>
               <li>Category 1</li>
               <li>Category 2</li>
               <li>Category 3</li>
-            </div>
+            </div> */}
           </li>
         </ul>
         <div className="center">HarryStore</div>

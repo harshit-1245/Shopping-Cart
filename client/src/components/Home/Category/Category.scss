@@ -1,32 +1,54 @@
+// Category.scss
 @import "../../../css-config/mixins.scss";
 
-.shop-by-category{
-    margin: 25px 0;
-    @include md{
-        margin: 50px 0;
-    }
-    .categories{
-        display: flex;
-        flex-flow: wrap;
-        gap: 10px;
-        .category{
-            background-color:black;
-            width: calc(50% - 5px);
-            cursor: pointer;
-            overflow: hidden;
-            @include md{
-                width:calc(25% - 10px) ;
-            }
-            img{
-                width: 100%;
-                display: block;
-                transition: all ease 0.3s;
-            }
-            &:hover{
-                img{
-                      transform: scale(1.2);
-                }
-            }
+.shop-by-category {
+  margin: 25px 0;
+  @include md {
+    margin: 50px 0;
+  }
+
+  .categories {
+    display: flex;
+    flex-flow: wrap;
+    gap: 10px;
+
+    .category {
+      background-color: black;
+      width: calc(50% - 5px);
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      @include md {
+        width: calc(25% - 10px);
+      }
+
+      .category-name {
+        color: white;
+        font-size: 18px;
+        text-align: center;
+        padding: 10px;
+      }
+
+      &:hover {
+        .category-name {
+          transform: scale(1.2);
         }
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 2px;
+        height: 100%;
+        background-color: #fff;
+        transform: translateX(-50%);
+      }
     }
+
+    .category:nth-child(even)::before {
+      left: 0;
+    }
+  }
 }
